@@ -1,5 +1,6 @@
 import * as React from "react";
-import { View, Text } from 'react-native';
+
+import { Text, View } from 'react-native';
 
 export interface Props {
 
@@ -18,7 +19,7 @@ class SurpriseScreen extends React.Component<Props, State> {
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text>Surprise Screen</Text>
+                
             </View>
         );
     }

@@ -46,7 +46,15 @@ export default createBottomTabNavigator(
       },
       tabBarLabel: () => {
         const { routeName } = navigation.state;
-        return <Text style={{ fontSize: 12 }}>123</Text>;
+        let textName = "";
+        if (routeName === "Home") {
+          textName = "主页";
+        } else if (routeName === "My") {
+          textName = "我的";
+        } else if (routeName === "Surprise") {
+          textName = "惊喜";
+        }
+        return <Text style={{ fontSize: 12 }}>{textName}</Text>;
       }
     }),
     tabBarOptions: {
