@@ -1,6 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import React, { Component } from "react";
+import { computed, observable } from "mobx";
+
+import logo from "./logo.svg";
+import { observer } from "mobx-react";
+
+var appState = observable({
+  timer: 0
+});
+
+@observer
+class TimerView extends React.Component {
+  render() {
+    return (
+      <button onClick={this.onReset.bind(this)}>
+        Seconds passed: {this.props.appState.timer}
+      </button>
+    );
+  }
+
+  onReset() {
+    this.props.appState.resetTimer();
+  }
+}
+
 
 class App extends Component {
   render() {
